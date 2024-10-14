@@ -23,38 +23,15 @@
 
         .container {
             display: flex;
+            flex-direction: column;
             max-width: 1200px;
             margin: 20px auto;
-        }
-
-        .sidebar {
-            width: 200px;
-            background-color: #fff;
             padding: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            border-radius: 5px;
-        }
-
-        .sidebar a {
-            display: block;
-            padding: 10px;
-            color: #333;
-            text-decoration: none;
-            margin-bottom: 5px;
-            border-radius: 5px;
-            transition: background 0.3s;
-        }
-
-        .sidebar a:hover {
-            background-color: #f0a020;
-            color: white;
         }
 
         .main-content {
-            flex: 1;
-            padding: 20px;
             background-color: #fff;
-            margin-left: 20px;
+            padding: 20px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             border-radius: 5px;
         }
@@ -101,6 +78,31 @@
             transform: scale(1.05);
         }
 
+        /* نظام التقييم */
+        .rating {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 10px;
+        }
+
+        .rating span {
+            font-size: 20px;
+            cursor: pointer;
+            color: #ccc;
+            transition: color 0.3s;
+        }
+
+        .rating span:hover, .rating span.active {
+            color: #f0a020;
+        }
+
+        .contact-info {
+            margin: 10px 0;
+            font-size: 18px;
+            text-align: center;
+        }
+
         footer {
             background-color: #f0c040;
             padding: 10px;
@@ -109,9 +111,23 @@
             margin-top: 20px;
         }
 
-        .contact-info {
-            margin: 10px 0;
-            font-size: 18px;
+        @media (max-width: 768px) {
+            .product-gallery {
+                grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+            }
+
+            header {
+                font-size: 24px;
+            }
+
+            .background-image {
+                height: 200px;
+                font-size: 20px;
+            }
+
+            .rating span {
+                font-size: 16px;
+            }
         }
     </style>
 </head>
@@ -122,12 +138,6 @@
     </header>
 
     <div class="container">
-        <div class="sidebar">
-            <a href="#home">الرئيسية</a>
-            <a href="#products">المنتجات</a>
-            <a href="#about">عنّا</a>
-            <a href="#contact">تواصل معنا</a>
-        </div>
         <div class="main-content">
             <div class="background-image">
                 <h1>أفضل أنواع العسل الطبيعي</h1>
@@ -137,31 +147,26 @@
             <div class="product-section" id="products">
                 <h2>منتجاتنا</h2>
                 <div class="product-gallery">
-                    <img src="doan.jpg" alt="Product 1">
-                    <img src="doan2.jpg" alt="Product 2">
-                    <img src="doan3.jpg" alt="Product 3">
-                    <img src="doan4.jpg" alt="Product 4">
-                    <img src="doan5.jpg" alt="Product 5">
-                    <img src="doan6.jpg" alt="Product 6">
-                    <img src="doan7.jpg" alt="Product 7">
-                    <img src="doan8.jpg" alt="Product 8">
-                    <img src="doan9.jpg" alt="Product 9">
-                    <img src="doan10.jpg" alt="Product 10">
-                    <img src="doan11.jpg" alt="Product 11">
-                    <img src="doan12.jpg" alt="Product 12">
-                    <img src="doan13.jpg" alt="Product 13">
-                    <img src="doan14.jpg" alt="Product 14">
-                    <img src="doan15.jpg" alt="Product 15">
-                    <img src="doan16.jpg" alt="Product 16">
-                    <img src="doan17.jpg" alt="Product 17">
-                    <img src="doan18.jpg" alt="Product 18">
-                    <img src="doan19.jpg" alt="Product 19">
-                    <img src="doan20.jpg" alt="Product 20">
-                    <img src="doan21.jpg" alt="Product 21">
-                    <img src="doan22.jpg" alt="Product 22">
-                    <img src="doan23.jpg" alt="Product 23">
-                    <img src="doan24.jpg" alt="Product 24">
-                    <img src="doan25.jpg" alt="Product 25">
+                    <!-- المنتجات مع نظام التقييم -->
+                    <div>
+                        <img src="doan.jpg" alt="Product 1">
+                        <div class="rating">
+                            <span>⭐</span><span>⭐</span><span>⭐</span><span>⭐</span><span>⭐</span>
+                        </div>
+                    </div>
+                    <div>
+                        <img src="doan2.jpg" alt="Product 2">
+                        <div class="rating">
+                            <span>⭐</span><span>⭐</span><span>⭐</span><span>⭐</span><span>⭐</span>
+                        </div>
+                    </div>
+                    <div>
+                        <img src="doan3.jpg" alt="Product 3">
+                        <div class="rating">
+                            <span>⭐</span><span>⭐</span><span>⭐</span><span>⭐</span><span>⭐</span>
+                        </div>
+                    </div>
+                    <!-- يمكنك إضافة المزيد من المنتجات بهذه الطريقة -->
                 </div>
             </div>
 
@@ -180,5 +185,21 @@
         </div>
     </footer>
 
+    <script>
+        // إضافة نظام تفاعل مع التقييم
+        const ratings = document.querySelectorAll('.rating span');
+        ratings.forEach(star => {
+            star.addEventListener('click', function() {
+                let allStars = this.parentNode.querySelectorAll('span');
+                allStars.forEach(s => s.classList.remove('active'));
+                this.classList.add('active');
+                let previousSiblings = Array.from(this.parentNode.children);
+                let index = previousSiblings.indexOf(this);
+                for (let i = 0; i <= index; i++) {
+                    previousSiblings[i].classList.add('active');
+                }
+            });
+        });
+    </script>
 </body>
 </html>
