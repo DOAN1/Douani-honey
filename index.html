@@ -19,31 +19,17 @@
             background-size: cover;
             background-position: center;
             height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-        }
-
-        /* نص العنوان */
-        h1 {
-            font-size: 48px;
-            color: #fff;
-            margin-bottom: 20px;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
         }
 
         /* التمرير للأسفل */
         .scroll-down {
-            position: relative;
-            top: 100vh; /* بعد الصورة */
             display: flex;
             justify-content: center;
             align-items: center;
             flex-direction: column;
-            padding: 20px;
+            padding: 40px 20px;
             background-color: #fff;
+            margin-top: -150px; /* رفع الأيقونات قليلاً */
         }
 
         /* أيقونات التواصل الاجتماعي */
@@ -100,29 +86,36 @@
 </head>
 <body>
 
-    <!-- خلفية الصورة والنص العلوي -->
-    <div class="background">
-        <h1>DOAN HONEY TRADING</h1>
-    </div>
+    <!-- خلفية الصورة بدون النص -->
+    <div class="background"></div>
 
     <!-- بعد التمرير للأسفل -->
     <div class="scroll-down">
         <!-- روابط التواصل الاجتماعي -->
         <div class="social-icons">
-            <a href="https://www.facebook.com/profile.php?id=100076436856582&mibextid=ZbWKwL" target="_blank"><i class="fab fa-facebook"></i></a>
-            <a href="https://www.instagram.com/doan._honey/profilecard/?igsh=aDh5cXc4bWxmOHkz" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.facebook.com/profile.php?id=100076436856582&mibextid=ZbWKwL" target="_blank">
+                <i class="fab fa-facebook"></i>
+            </a>
+            <a href="https://www.instagram.com/doan._honey/profilecard/?igsh=aDh5cXc4bWxmOHkz" target="_blank">
+                <i class="fab fa-instagram"></i>
+            </a>
         </div>
 
-        <!-- معلومات الاتصال -->
+        <!-- أيقونات الاتصال (بريد، هاتف، موقع) -->
         <div class="contact-icons">
-            <a href="mailto:doanhoney7@gmail.com"><i class="fas fa-envelope"></i></a>
-            <a href="tel:+567541330"><i class="fas fa-phone"></i></a>
-            <a href="https://goo.gl/maps/example"><i class="fas fa-map-marker-alt"></i></a>
+            <a href="mailto:doanhoney7@gmail.com" target="_blank">
+                <i class="fas fa-envelope"></i>
+            </a>
+            <a href="tel:+567541330">
+                <i class="fas fa-phone"></i>
+            </a>
+            <a href="https://goo.gl/maps/V6nx4JxtB4mBMcf58" target="_blank">
+                <i class="fas fa-map-marker-alt"></i>
+            </a>
         </div>
 
-        <!-- زر الانتقال إلى صفحة المنتجات -->
+        <!-- زر عرض المنتجات -->
         <a href="products.html" class="products-button">عرض المنتجات</a>
     </div>
-
 </body>
 </html>
