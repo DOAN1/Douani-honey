@@ -6,82 +6,123 @@
     <title>DOAN HONEY TRADING</title>
     <style>
         body {
+            font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            font-family: Arial, sans-serif;
-            text-align: center;
+            background-color: #fff;
+            color: #333;
+        }
+
+        /* خلفية الشاشة */
+        .background {
             background-image: url('screen1.jpg');
             background-size: cover;
             background-position: center;
-            color: white;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
         }
-        .content {
-            padding: 20px;
-            background-color: rgba(0, 0, 0, 0.5);
-            margin-top: 100px;
-        }
+
+        /* نص العنوان */
         h1 {
-            font-size: 3em;
-            margin-bottom: 10px;
+            font-size: 48px;
+            color: #fff;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
         }
-        p {
-            font-size: 1.5em;
+
+        /* التمرير للأسفل */
+        .scroll-down {
+            position: relative;
+            top: 100vh; /* بعد الصورة */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            padding: 20px;
+            background-color: #fff;
         }
-        .social-media, .contact {
+
+        /* أيقونات التواصل الاجتماعي */
+        .social-icons {
             margin: 20px 0;
         }
-        .social-media a, .contact a {
-            color: white;
-            text-decoration: none;
-            font-size: 1.2em;
-            margin: 0 10px;
-        }
-        .products-button {
+
+        .social-icons a {
             display: inline-block;
-            padding: 10px 20px;
-            background-color: gold;
-            color: black;
-            border-radius: 25px;
+            margin: 0 15px;
+            font-size: 24px;
+            color: #333;
             text-decoration: none;
-            font-size: 1.5em;
-            margin-top: 20px;
         }
-        .products-button:hover {
-            background-color: darkorange;
+
+        /* تخصيص الأيقونات */
+        .social-icons i {
+            font-size: 36px;
         }
-        footer {
+
+        /* أيقونات البريد، الهاتف، الموقع */
+        .contact-icons {
+            display: flex;
+            justify-content: center;
+            margin-top: 10px;
+        }
+
+        .contact-icons a {
+            display: inline-block;
+            margin: 0 15px;
+            font-size: 36px;
+            color: #333;
+            text-decoration: none;
+        }
+
+        /* أيقونة عرض المنتجات */
+        .products-button {
             margin-top: 40px;
-            font-size: 1em;
+            padding: 10px 20px;
+            background-color: #ffa500;
+            color: white;
+            font-size: 18px;
+            text-decoration: none;
+            border-radius: 10px;
+        }
+
+        .products-button:hover {
+            background-color: #ff8800;
         }
     </style>
+
+    <!-- إضافة مكتبة الأيقونات من Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
 
-    <div class="content">
+    <!-- خلفية الصورة والنص العلوي -->
+    <div class="background">
         <h1>DOAN HONEY TRADING</h1>
-        <p>أفضل منتجات العسل من اليمن</p>
+    </div>
 
+    <!-- بعد التمرير للأسفل -->
+    <div class="scroll-down">
         <!-- روابط التواصل الاجتماعي -->
-        <div class="social-media">
-            <a href="https://www.facebook.com/profile.php?id=100076436856582&mibextid=ZbWKwL" target="_blank">فيسبوك</a>
-            <a href="https://www.instagram.com/doan._honey/profilecard/?igsh=aDh5cXc4bWxmOHkz" target="_blank">إنستقرام</a>
+        <div class="social-icons">
+            <a href="https://www.facebook.com/profile.php?id=100076436856582&mibextid=ZbWKwL" target="_blank"><i class="fab fa-facebook"></i></a>
+            <a href="https://www.instagram.com/doan._honey/profilecard/?igsh=aDh5cXc4bWxmOHkz" target="_blank"><i class="fab fa-instagram"></i></a>
         </div>
 
         <!-- معلومات الاتصال -->
-        <div class="contact">
-            <p>الهاتف: <a href="tel:567541330">567541330</a></p>
-            <p>البريد الإلكتروني: <a href="mailto:doanhoney7@gmail.com">doanhoney7@gmail.com</a></p>
-            <p>الموقع: فيستيفال بلازا-دبي-الإمارات</p>
+        <div class="contact-icons">
+            <a href="mailto:doanhoney7@gmail.com"><i class="fas fa-envelope"></i></a>
+            <a href="tel:+567541330"><i class="fas fa-phone"></i></a>
+            <a href="https://goo.gl/maps/example"><i class="fas fa-map-marker-alt"></i></a>
         </div>
 
-        <!-- زر المنتجات -->
+        <!-- زر الانتقال إلى صفحة المنتجات -->
         <a href="products.html" class="products-button">عرض المنتجات</a>
     </div>
 
-    <footer>
-        &copy; 2024 DOAN HONEY TRADING
-    </footer>
-
 </body>
 </html>
-
