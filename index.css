@@ -1,0 +1,32 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.honeycomb {
+  background-color: #fff9e6;
+  opacity: 0.1;
+  background-image: linear-gradient(#e9b824 1.2000000000000002px, transparent 1.2000000000000002px), linear-gradient(to right, #e9b824 1.2000000000000002px, #fff9e6 1.2000000000000002px);
+  background-size: 24px 24px;
+}
+
+.hero-pattern {
+  background-color: #fef3c7;
+  opacity: 0.8;
+  background-image:  repeating-radial-gradient( circle at 0 0, transparent 0, #fef3c7 40px ), repeating-linear-gradient( #d9770555, #d97705 );
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.float-animation {
+  animation: float 6s ease-in-out infinite;
+}
